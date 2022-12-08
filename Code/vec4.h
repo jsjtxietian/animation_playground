@@ -1,7 +1,6 @@
 #ifndef _H_VEC4_
 #define _H_VEC4_
 
-
 template<typename T>
 struct TVec4 {
 	union {

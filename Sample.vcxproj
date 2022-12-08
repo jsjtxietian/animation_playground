@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Code\glad.c" />
+    <ClCompile Include="Code\mat4.cpp" />
     <ClCompile Include="Code\vec3.cpp" />
     <ClCompile Include="Code\WinMain.cpp" />
   </ItemGroup>
@@ -139,6 +140,7 @@
     <ClInclude Include="Code\Application.h" />
     <ClInclude Include="Code\glad.h" />
     <ClInclude Include="Code\khrplatform.h" />
+    <ClInclude Include="Code\mat4.h" />
     <ClInclude Include="Code\vec2.h" />
     <ClInclude Include="Code\vec3.h" />
     <ClInclude Include="Code\vec4.h" />
