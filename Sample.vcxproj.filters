@@ -37,6 +37,12 @@
     <Filter Include="Source Files\GLTF">
       <UniqueIdentifier>{5db486f3-a837-4cfb-9a30-e9563cb06e29}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Animation">
+      <UniqueIdentifier>{ab50d73e-f5ba-4a54-a621-6107056469e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Animation">
+      <UniqueIdentifier>{e653b026-fbf0-4392-b6f4-7500fc5f2d75}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\WinMain.cpp">
@@ -83,6 +89,18 @@
     </ClCompile>
     <ClCompile Include="Code\GLTFLoader.cpp">
       <Filter>Source Files\GLTF</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Track.cpp">
+      <Filter>Source Files\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\TransformTrack.cpp">
+      <Filter>Source Files\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\DebugDraw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Sample.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +157,24 @@
     </ClInclude>
     <ClInclude Include="Code\GLTFLoader.h">
       <Filter>Header Files\GLTF</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Interpolation.h">
+      <Filter>Header Files\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Frame.h">
+      <Filter>Header Files\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Track.h">
+      <Filter>Header Files\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\TransformTrack.h">
+      <Filter>Header Files\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\DebugDraw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Sample.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
