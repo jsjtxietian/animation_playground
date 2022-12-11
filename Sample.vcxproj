@@ -133,12 +133,14 @@
   <ItemGroup>
     <ClCompile Include="Code\Attribute.cpp" />
     <ClCompile Include="Code\cgltf.c" />
+    <ClCompile Include="Code\Clip.cpp" />
     <ClCompile Include="Code\DebugDraw.cpp" />
     <ClCompile Include="Code\Draw.cpp" />
     <ClCompile Include="Code\glad.c" />
     <ClCompile Include="Code\GLTFLoader.cpp" />
     <ClCompile Include="Code\IndexBuffer.cpp" />
     <ClCompile Include="Code\mat4.cpp" />
+    <ClCompile Include="Code\Pose.cpp" />
     <ClCompile Include="Code\quat.cpp" />
     <ClCompile Include="Code\Sample.cpp" />
     <ClCompile Include="Code\Shader.cpp" />
@@ -155,6 +157,7 @@
     <ClInclude Include="Code\Application.h" />
     <ClInclude Include="Code\Attribute.h" />
     <ClInclude Include="Code\cgltf.h" />
+    <ClInclude Include="Code\Clip.h" />
     <ClInclude Include="Code\DebugDraw.h" />
     <ClInclude Include="Code\Draw.h" />
     <ClInclude Include="Code\Frame.h" />
@@ -164,6 +167,7 @@
     <ClInclude Include="Code\Interpolation.h" />
     <ClInclude Include="Code\khrplatform.h" />
     <ClInclude Include="Code\mat4.h" />
+    <ClInclude Include="Code\Pose.h" />
     <ClInclude Include="Code\quat.h" />
     <ClInclude Include="Code\Sample.h" />
     <ClInclude Include="Code\Shader.h" />

@@ -6,6 +6,7 @@
 #include "vec3.h"
 #include "mat4.h"
 #include <vector>
+#include "Pose.h"
 
 enum class DebugDrawMode {
 	Lines, Loop, Strip, Points
@@ -28,6 +29,8 @@ public:
 	void Resize(unsigned int newSize);
 	vec3& operator[](unsigned int index);
 	void Push(const vec3& v);
+
+	void FromPose(Pose& pose);
 
 	void UpdateOpenGLBuffers();
 	void Draw(DebugDrawMode mode, const vec3& color, const mat4& mvp);

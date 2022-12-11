@@ -96,6 +96,12 @@
     <ClCompile Include="Code\TransformTrack.cpp">
       <Filter>Source Files\Animation</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Pose.cpp">
+      <Filter>Source Files\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Clip.cpp">
+      <Filter>Source Files\Animation</Filter>
+    </ClCompile>
     <ClCompile Include="Code\DebugDraw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -170,10 +176,16 @@
     <ClInclude Include="Code\TransformTrack.h">
       <Filter>Header Files\Animation</Filter>
     </ClInclude>
-    <ClInclude Include="Code\DebugDraw.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Code\Pose.h">
+      <Filter>Header Files\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Clip.h">
+      <Filter>Header Files\Animation</Filter>
     </ClInclude>
     <ClInclude Include="Code\Sample.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\DebugDraw.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
