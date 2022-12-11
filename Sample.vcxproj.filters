@@ -31,6 +31,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\GLTF">
+      <UniqueIdentifier>{0e219a43-2b8b-4d42-9c84-c27e5fdd221b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GLTF">
+      <UniqueIdentifier>{5db486f3-a837-4cfb-9a30-e9563cb06e29}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\WinMain.cpp">
@@ -72,8 +78,11 @@
     <ClCompile Include="Code\Draw.cpp">
       <Filter>Source Files\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Sample.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Code\cgltf.c">
+      <Filter>Source Files\GLTF</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GLTFLoader.cpp">
+      <Filter>Source Files\GLTF</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -125,8 +134,11 @@
     <ClInclude Include="Code\Draw.h">
       <Filter>Header Files\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Sample.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Code\cgltf.h">
+      <Filter>Header Files\GLTF</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GLTFLoader.h">
+      <Filter>Header Files\GLTF</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

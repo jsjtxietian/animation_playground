@@ -132,12 +132,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Code\Attribute.cpp" />
+    <ClCompile Include="Code\cgltf.c" />
     <ClCompile Include="Code\Draw.cpp" />
     <ClCompile Include="Code\glad.c" />
+    <ClCompile Include="Code\GLTFLoader.cpp" />
     <ClCompile Include="Code\IndexBuffer.cpp" />
     <ClCompile Include="Code\mat4.cpp" />
     <ClCompile Include="Code\quat.cpp" />
-    <ClCompile Include="Code\Sample.cpp" />
     <ClCompile Include="Code\Shader.cpp" />
     <ClCompile Include="Code\stb_image.cpp" />
     <ClCompile Include="Code\Texture.cpp" />
@@ -149,13 +150,14 @@
   <ItemGroup>
     <ClInclude Include="Code\Application.h" />
     <ClInclude Include="Code\Attribute.h" />
+    <ClInclude Include="Code\cgltf.h" />
     <ClInclude Include="Code\Draw.h" />
     <ClInclude Include="Code\glad.h" />
+    <ClInclude Include="Code\GLTFLoader.h" />
     <ClInclude Include="Code\IndexBuffer.h" />
     <ClInclude Include="Code\khrplatform.h" />
     <ClInclude Include="Code\mat4.h" />
     <ClInclude Include="Code\quat.h" />
-    <ClInclude Include="Code\Sample.h" />
     <ClInclude Include="Code\Shader.h" />
     <ClInclude Include="Code\stb_image.h" />
     <ClInclude Include="Code\Texture.h" />
