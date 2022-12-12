@@ -140,10 +140,12 @@
     <ClCompile Include="Code\GLTFLoader.cpp" />
     <ClCompile Include="Code\IndexBuffer.cpp" />
     <ClCompile Include="Code\mat4.cpp" />
+    <ClCompile Include="Code\Mesh.cpp" />
     <ClCompile Include="Code\Pose.cpp" />
     <ClCompile Include="Code\quat.cpp" />
     <ClCompile Include="Code\Sample.cpp" />
     <ClCompile Include="Code\Shader.cpp" />
+    <ClCompile Include="Code\Skeleton.cpp" />
     <ClCompile Include="Code\stb_image.cpp" />
     <ClCompile Include="Code\Texture.cpp" />
     <ClCompile Include="Code\Track.cpp" />
@@ -167,10 +169,12 @@
     <ClInclude Include="Code\Interpolation.h" />
     <ClInclude Include="Code\khrplatform.h" />
     <ClInclude Include="Code\mat4.h" />
+    <ClInclude Include="Code\Mesh.h" />
     <ClInclude Include="Code\Pose.h" />
     <ClInclude Include="Code\quat.h" />
     <ClInclude Include="Code\Sample.h" />
     <ClInclude Include="Code\Shader.h" />
+    <ClInclude Include="Code\Skeleton.h" />
     <ClInclude Include="Code\stb_image.h" />
     <ClInclude Include="Code\Texture.h" />
     <ClInclude Include="Code\Track.h" />
@@ -183,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\lit.frag" />
+    <None Include="Shaders\skinned.vert" />
     <None Include="Shaders\static.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -43,6 +43,12 @@
     <Filter Include="Source Files\Animation">
       <UniqueIdentifier>{e653b026-fbf0-4392-b6f4-7500fc5f2d75}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Rendering">
+      <UniqueIdentifier>{c1625a1e-53f3-492f-8945-138bc13a3e8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rendering">
+      <UniqueIdentifier>{f12d9cae-9427-44bd-807e-c928ce8471eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\WinMain.cpp">
@@ -101,6 +107,12 @@
     </ClCompile>
     <ClCompile Include="Code\Clip.cpp">
       <Filter>Source Files\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Skeleton.cpp">
+      <Filter>Source Files\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Mesh.cpp">
+      <Filter>Source Files\Rendering</Filter>
     </ClCompile>
     <ClCompile Include="Code\DebugDraw.cpp">
       <Filter>Source Files</Filter>
@@ -182,10 +194,16 @@
     <ClInclude Include="Code\Clip.h">
       <Filter>Header Files\Animation</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Sample.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Code\Skeleton.h">
+      <Filter>Header Files\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Mesh.h">
+      <Filter>Header Files\Rendering</Filter>
     </ClInclude>
     <ClInclude Include="Code\DebugDraw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Sample.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -194,6 +212,9 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="Shaders\static.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\skinned.vert">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
