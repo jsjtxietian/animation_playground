@@ -114,9 +114,6 @@
     <ClCompile Include="Code\Mesh.cpp">
       <Filter>Source Files\Rendering</Filter>
     </ClCompile>
-    <ClCompile Include="Code\DebugDraw.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Code\Sample.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -199,9 +196,6 @@
     </ClInclude>
     <ClInclude Include="Code\Mesh.h">
       <Filter>Header Files\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\DebugDraw.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Code\Sample.h">
       <Filter>Header Files</Filter>

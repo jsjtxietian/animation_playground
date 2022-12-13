@@ -134,7 +134,6 @@
     <ClCompile Include="Code\Attribute.cpp" />
     <ClCompile Include="Code\cgltf.c" />
     <ClCompile Include="Code\Clip.cpp" />
-    <ClCompile Include="Code\DebugDraw.cpp" />
     <ClCompile Include="Code\Draw.cpp" />
     <ClCompile Include="Code\glad.c" />
     <ClCompile Include="Code\GLTFLoader.cpp" />
@@ -160,7 +159,6 @@
     <ClInclude Include="Code\Attribute.h" />
     <ClInclude Include="Code\cgltf.h" />
     <ClInclude Include="Code\Clip.h" />
-    <ClInclude Include="Code\DebugDraw.h" />
     <ClInclude Include="Code\Draw.h" />
     <ClInclude Include="Code\Frame.h" />
     <ClInclude Include="Code\glad.h" />
