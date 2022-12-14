@@ -42,6 +42,7 @@ public:
 	std::vector<ivec4>& GetInfluences();
 	std::vector<unsigned int>& GetIndices();
 	void CPUSkin(Skeleton& skeleton, Pose& pose);
+	void CPUSkin(std::vector<mat4>& animated);
 	void UpdateOpenGLBuffers();
 	void Bind(int position, int normal, int texCoord, int weight, int influcence);
 	void Draw();

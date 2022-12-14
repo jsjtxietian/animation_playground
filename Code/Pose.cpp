@@ -66,6 +66,29 @@ Transform Pose::operator[](unsigned int index) {
 	return GetGlobalTransform(index);
 }
 
+#if 1
+void Pose::GetMatrixPalette(std::vector<mat4>& out) {
+	int size = (int)Size();
+	if ((int)out.size() != size) { out.resize(size); }
+
+	int i = 0;
+	for (; i < size; ++i) {
+		int parent = mParents[i];
+		if (parent > i) { break; }
+
+		mat4 global = transformToMat4(mJoints[i]);
+		if (parent >= 0) {
+			global = out[parent] * global;
+		}
+		out[i] = global;
+	}
+
+	for (; i < size; ++i) {
+		Transform t = GetGlobalTransform(i);
+		out[i] = transformToMat4(t);
+	}
+}
+#else
 void Pose::GetMatrixPalette(std::vector<mat4>& out) {
 	unsigned int size = Size();
 	if (out.size() != size) {
@@ -77,6 +100,7 @@ void Pose::GetMatrixPalette(std::vector<mat4>& out) {
 		out[i] = transformToMat4(t);
 	}
 }
+#endif
 
 int Pose::GetParent(unsigned int index) {
 	return mParents[index];

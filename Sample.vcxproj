@@ -142,7 +142,7 @@
     <ClCompile Include="Code\Mesh.cpp" />
     <ClCompile Include="Code\Pose.cpp" />
     <ClCompile Include="Code\quat.cpp" />
-    <ClCompile Include="Code\Sample.cpp" />
+    <ClCompile Include="Code\RearrangeBones.cpp" />
     <ClCompile Include="Code\Shader.cpp" />
     <ClCompile Include="Code\Skeleton.cpp" />
     <ClCompile Include="Code\stb_image.cpp" />
@@ -170,7 +170,7 @@
     <ClInclude Include="Code\Mesh.h" />
     <ClInclude Include="Code\Pose.h" />
     <ClInclude Include="Code\quat.h" />
-    <ClInclude Include="Code\Sample.h" />
+    <ClInclude Include="Code\RearrangeBones.h" />
     <ClInclude Include="Code\Shader.h" />
     <ClInclude Include="Code\Skeleton.h" />
     <ClInclude Include="Code\stb_image.h" />
@@ -185,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\lit.frag" />
+    <None Include="Shaders\preskinned.vert" />
     <None Include="Shaders\skinned.vert" />
     <None Include="Shaders\static.vert" />
   </ItemGroup>

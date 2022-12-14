@@ -114,8 +114,8 @@
     <ClCompile Include="Code\Mesh.cpp">
       <Filter>Source Files\Rendering</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Sample.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Code\RearrangeBones.cpp">
+      <Filter>Source Files\Animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -179,9 +179,6 @@
     <ClInclude Include="Code\Frame.h">
       <Filter>Header Files\Animation</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Track.h">
-      <Filter>Header Files\Animation</Filter>
-    </ClInclude>
     <ClInclude Include="Code\TransformTrack.h">
       <Filter>Header Files\Animation</Filter>
     </ClInclude>
@@ -197,8 +194,11 @@
     <ClInclude Include="Code\Mesh.h">
       <Filter>Header Files\Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Sample.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Code\Track.h">
+      <Filter>Header Files\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\RearrangeBones.h">
+      <Filter>Header Files\Animation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -209,6 +209,9 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="Shaders\skinned.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\preskinned.vert">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
