@@ -1,5 +1,5 @@
-#ifndef _H_CHAPTER11SAMPLE02_
-#define _H_CHAPTER11SAMPLE02_
+#ifndef _H_CHAPTER11SAMPLE03_
+#define _H_CHAPTER11SAMPLE03_
 
 #include "Application.h"
 #include <vector>
@@ -19,7 +19,7 @@ protected:
 	std::vector<mat4> mPosePalette;
 	Skeleton mSkeleton;
 	Pose mCurrentPose;
-	std::vector<FastClip> mClips;
+	std::vector<Clip> mClips;
 	unsigned int mCurrentClip;
 	float mPlaybackTime;
 public:

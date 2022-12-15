@@ -4,17 +4,22 @@
 #include "GLTFLoader.h"
 #include "Uniform.h"
 #include "glad.h"
+#include "RearrangeBones.h"
 
 void Sample::Initialize() {
 	cgltf_data* gltf = LoadGLTFFile("Assets/Woman.gltf");
 	mMeshes = LoadMeshes(gltf);
 	mSkeleton = LoadSkeleton(gltf);
-	std::vector<Clip> clips = LoadAnimationClips(gltf);
-	mClips.resize(clips.size());
-	for (unsigned int i = 0, size = (unsigned int)clips.size(); i < size; ++i) {
-		mClips[i] = OptimizeClip(clips[i]);
-	}
+	mClips = LoadAnimationClips(gltf);
 	FreeGLTFFile(gltf);
+
+	BoneMap bones = RearrangeSkeleton(mSkeleton);
+	for (unsigned int i = 0, size = (unsigned int)mMeshes.size(); i < size; ++i) {
+		RearrangeMesh(mMeshes[i], bones);
+	}
+	for (unsigned int i = 0, size = (unsigned int)mClips.size(); i < size; ++i) {
+		RearrangeClip(mClips[i], bones);
+	}
 
 	mSkinnedShader = new Shader("Shaders/skinned.vert", "Shaders/lit.frag");
 	mDiffuseTexture = new Texture("Assets/Woman.png");
@@ -22,6 +27,7 @@ void Sample::Initialize() {
 	mCurrentClip = 0;
 	mCurrentPose = mSkeleton.GetRestPose();
 
+	// For the UI
 	unsigned int numUIClips = (unsigned int)mClips.size();
 	for (unsigned int i = 0; i < numUIClips; ++i) {
 		if (mClips[i].GetName() == "Walking") {
