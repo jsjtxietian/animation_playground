@@ -1,38 +1,27 @@
-#ifndef _H_CHAPTER11SAMPLE01_
-#define _H_CHAPTER11SAMPLE01_
+#ifndef _H_CHAPTER11SAMPLE02_
+#define _H_CHAPTER11SAMPLE02_
 
 #include "Application.h"
 #include <vector>
 #include "Pose.h"
 #include "Clip.h"
 #include "Skeleton.h"
-#include "Texture.h"
 #include "Mesh.h"
+#include "Texture.h"
 #include <vector>
 #include "Shader.h"
-
-struct AnimationInstance {
-	Pose mAnimatedPose;
-	std::vector <mat4> mPosePalette;
-	unsigned int mClip;
-	float mPlayback;
-	Transform mModel;
-
-	inline AnimationInstance() : mClip(0), mPlayback(0.0f) { }
-};
 
 class Sample : public Application {
 protected:
 	Texture* mDiffuseTexture;
-	Shader* mStaticShader;
 	Shader* mSkinnedShader;
+	std::vector<Mesh> mMeshes;
+	std::vector<mat4> mPosePalette;
 	Skeleton mSkeleton;
-	std::vector<Clip> mClips;
-
-	std::vector<Mesh> mCPUMeshes;
-	std::vector<Mesh> mGPUMeshes;
-	AnimationInstance mCPUInstance;
-	AnimationInstance mGPUInstance;
+	Pose mCurrentPose;
+	std::vector<FastClip> mClips;
+	unsigned int mCurrentClip;
+	float mPlaybackTime;
 public:
 	void Initialize();
 	void Update(float deltaTime);

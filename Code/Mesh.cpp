@@ -226,7 +226,6 @@ void Mesh::CPUSkin(std::vector<mat4>& animatedPose) {
 		vec3 p3 = transformPoint(animatedPose[j.w], mPosition[i]);
 		mSkinnedPosition[i] = p0 * w.x + p1 * w.y + p2 * w.z + p3 * w.w;
 
-
 		vec3 n0 = transformVector(animatedPose[j.x], mNormal[i]);
 		vec3 n1 = transformVector(animatedPose[j.y], mNormal[i]);
 		vec3 n2 = transformVector(animatedPose[j.z], mNormal[i]);

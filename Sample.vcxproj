@@ -143,9 +143,9 @@
     <ClCompile Include="Code\Pose.cpp" />
     <ClCompile Include="Code\quat.cpp" />
     <ClCompile Include="Code\RearrangeBones.cpp" />
+    <ClCompile Include="Code\Sample.cpp" />
     <ClCompile Include="Code\Shader.cpp" />
     <ClCompile Include="Code\Skeleton.cpp" />
-    <ClCompile Include="Code\Sample.cpp" />
     <ClCompile Include="Code\stb_image.cpp" />
     <ClCompile Include="Code\Texture.cpp" />
     <ClCompile Include="Code\Track.cpp" />
