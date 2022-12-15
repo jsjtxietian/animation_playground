@@ -256,11 +256,9 @@ int FastTrack<T, N>::FrameIndex(float time, bool looping) {
 		float startTime = frames[0].mTime;
 		float endTime = frames[size - 1].mTime;
 		float duration = endTime - startTime;
-		time = fmodf(time - startTime, endTime - startTime);
-		if (time < 0.0f) {
-			time += endTime - startTime;
-		}
-		time = time + startTime;
+		while (time < startTime) { time += duration; }
+		while (time > endTime) { time -= duration; }
+		if (time == endTime) { time = startTime; }
 	}
 	else {
 		if (time <= frames[0].mTime) {
