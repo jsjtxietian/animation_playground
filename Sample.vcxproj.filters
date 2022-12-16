@@ -49,6 +49,12 @@
     <Filter Include="Source Files\Rendering">
       <UniqueIdentifier>{f12d9cae-9427-44bd-807e-c928ce8471eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Animation\Blending">
+      <UniqueIdentifier>{6739cfba-722b-4b24-8a41-3690fa3f5f7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Animation\Blending">
+      <UniqueIdentifier>{d5bc9e31-3018-4e6c-83cc-400b690e0d36}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\WinMain.cpp">
@@ -114,8 +120,11 @@
     <ClCompile Include="Code\Mesh.cpp">
       <Filter>Source Files\Rendering</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Sample.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Code\Blending.cpp">
+      <Filter>Source Files\Animation\Blending</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\CrossFadeController.cpp">
+      <Filter>Source Files\Animation\Blending</Filter>
     </ClCompile>
     <ClCompile Include="Code\RearrangeBones.cpp">
       <Filter>Source Files\Animation</Filter>
@@ -200,8 +209,14 @@
     <ClInclude Include="Code\Track.h">
       <Filter>Header Files\Animation</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Sample.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Code\Blending.h">
+      <Filter>Header Files\Animation\Blending</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\CrossFadeTarget.h">
+      <Filter>Header Files\Animation\Blending</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\CrossFadeController.h">
+      <Filter>Header Files\Animation\Blending</Filter>
     </ClInclude>
     <ClInclude Include="Code\RearrangeBones.h">
       <Filter>Header Files\Animation</Filter>

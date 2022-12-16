@@ -30,7 +30,7 @@ float TClip<TRACK>::Sample(Pose& outPose, float time) {
 
 template <typename TRACK>
 float TClip<TRACK>::AdjustTimeToFitRange(float inTime) {
-	if (mLooping) { 
+	if (mLooping) {
 		float duration = mEndTime - mStartTime;
 		if (duration <= 0) {
 			return 0.0f;
