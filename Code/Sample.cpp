@@ -13,13 +13,26 @@ void Sample::Initialize() {
 	mShader = new Shader("Shaders/skinned.vert", "Shaders/lit.frag");
 	mTexture = new Texture("Assets/Woman.png");
 
-	mFadeController.SetSkeleton(mSkeleton);
-	mFadeController.Play(&mClips[0]);
-	mFadeController.Update(0.0f);
-	mFadeController.GetCurrentPose().GetMatrixPalette(mPosePalette);
+	mAdditiveTime = 0.0f;
+	mAdditiveDirection = 1.0f;
 
-	mFadeTimer = 3.0f;
-	mCurrentClip = 0;
+	mClip = 0;
+	mAdditiveIndex = 0;
+	for (unsigned int i = 0, size = (unsigned int)mClips.size(); i < size; ++i) {
+		if (mClips[i].GetName() == "Lean_Left") {
+			mAdditiveIndex = i;
+		}
+		if (mClips[i].GetName() == "Walking") {
+			mClip = i;
+		}
+	}
+
+	mAdditiveBase = MakeAdditivePose(mSkeleton, mClips[mAdditiveIndex]);
+	mClips[mAdditiveIndex].SetLooping(false);
+
+	mCurrentPose = mSkeleton.GetRestPose(); 
+	mAddPose = mSkeleton.GetRestPose();
+	mPlaybackTime = 0.0f;
 }
 
 void Sample::Shutdown() {
@@ -30,22 +43,24 @@ void Sample::Shutdown() {
 }
 
 void Sample::Update(float dt) {
-	mFadeController.Update(dt);
+	mAdditiveTime += dt * mAdditiveDirection;
 
-	mFadeTimer -= dt;
-	if (mFadeTimer < 0.0f) {
-		mFadeTimer = 3.0f;
-
-		unsigned int clip = mCurrentClip;
-		while (clip == mCurrentClip) {
-			clip = rand() % mClips.size();
-		}
-		mCurrentClip = clip;
-
-		mFadeController.FadeTo(&mClips[clip], 0.5f);
+	if (mAdditiveTime < 0.0f) {
+		mAdditiveTime = 0.0f;
+		mAdditiveDirection *= -1.0f;
 	}
 
-	mFadeController.GetCurrentPose().GetMatrixPalette(mPosePalette);
+	if (mAdditiveTime > 1.0f) {
+		mAdditiveTime = 1.0f;
+		mAdditiveDirection *= -1.0f;
+	}
+
+	mPlaybackTime = mClips[mClip].Sample(mCurrentPose, mPlaybackTime + dt);
+	float time = mClips[mAdditiveIndex].GetStartTime() + (mClips[mAdditiveIndex].GetDuration() * mAdditiveTime);
+	mClips[mAdditiveIndex].Sample(mAddPose, time);
+	Add(mCurrentPose, mCurrentPose, mAddPose, mAdditiveBase, -1);
+
+	mCurrentPose.GetMatrixPalette(mPosePalette);
 }
 
 void Sample::Render(float aspect) {

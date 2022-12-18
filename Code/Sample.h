@@ -20,9 +20,16 @@ protected:
 	Skeleton mSkeleton;
 	std::vector<mat4> mPosePalette;
 
-	CrossFadeController mFadeController;
-	unsigned int mCurrentClip;
-	float mFadeTimer;
+	unsigned int mClip;
+	unsigned int mAdditiveIndex;
+
+	float mPlaybackTime;
+	float mAdditiveTime;
+	float mAdditiveDirection;
+
+	Pose mCurrentPose;
+	Pose mAddPose;
+	Pose mAdditiveBase;
 public:
 	void Initialize();
 	void Update(float inDeltaTime);
