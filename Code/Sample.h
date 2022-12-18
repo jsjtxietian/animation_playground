@@ -8,12 +8,8 @@
 #include "Mesh.h"
 #include "Shader.h"
 #include "Texture.h"
-
-struct AnimationInstance {
-	unsigned int mClip;
-	float mTime;
-	Pose mPose;
-};
+#include "CrossFadeController.h"
+#include "CrossFadeTarget.h"
 
 class Sample : public Application {
 protected:
@@ -22,14 +18,11 @@ protected:
 	std::vector<Mesh> mMeshes;
 	std::vector<Clip> mClips;
 	Skeleton mSkeleton;
-	Pose mPose;
 	std::vector<mat4> mPosePalette;
-	std::vector<mat4> mSkinPalette;
 
-	AnimationInstance mA;
-	AnimationInstance mB;
-	float mBlendTime;
-	bool mInvertBlend;
+	CrossFadeController mFadeController;
+	unsigned int mCurrentClip;
+	float mFadeTimer;
 public:
 	void Initialize();
 	void Update(float inDeltaTime);

@@ -10,31 +10,16 @@ void Sample::Initialize() {
 	mMeshes = LoadMeshes(gltf);
 	FreeGLTFFile(gltf);
 
-	mPose = mSkeleton.GetRestPose();
-	mPose.GetMatrixPalette(mPosePalette);
-	mSkinPalette = mSkeleton.GetInvBindPose();
-
 	mShader = new Shader("Shaders/skinned.vert", "Shaders/lit.frag");
 	mTexture = new Texture("Assets/Woman.png");
 
-	mA.mPose = mPose;
-	mB.mPose = mPose;
+	mFadeController.SetSkeleton(mSkeleton);
+	mFadeController.Play(&mClips[0]);
+	mFadeController.Update(0.0f);
+	mFadeController.GetCurrentPose().GetMatrixPalette(mPosePalette);
 
-	mBlendTime = 0.0f;
-	mInvertBlend = false;
-
-	mA.mClip = 0;
-	mB.mClip = 1;
-	for (unsigned int i = 0, size = (unsigned int)mClips.size(); i < size; ++i) {
-		if (mClips[i].GetName() == "Walking") {
-			mA.mClip = i;
-			mA.mTime = mClips[i].GetStartTime();
-		}
-		else if (mClips[i].GetName() == "Running") {
-			mB.mClip = i;
-			mB.mTime = mClips[i].GetStartTime();
-		}
-	}
+	mFadeTimer = 3.0f;
+	mCurrentClip = 0;
 }
 
 void Sample::Shutdown() {
@@ -45,27 +30,27 @@ void Sample::Shutdown() {
 }
 
 void Sample::Update(float dt) {
-	mA.mTime = mClips[mA.mClip].Sample(mA.mPose, mA.mTime + dt);
-	mB.mTime = mClips[mB.mClip].Sample(mB.mPose, mB.mTime + dt);
+	mFadeController.Update(dt);
 
-	float bt = mBlendTime;
-	if (bt < 0.0f) { bt = 0.0f; }
-	if (bt > 1.0f) { bt = 1.0f; }
-	if (mInvertBlend) { bt = 1.0f - bt; }
-	Blend(mPose, mA.mPose, mB.mPose, bt, -1);
-	mPose.GetMatrixPalette(mPosePalette);
+	mFadeTimer -= dt;
+	if (mFadeTimer < 0.0f) {
+		mFadeTimer = 3.0f;
 
-	mBlendTime += dt;
-	if (mBlendTime >= 2.0f) {
-		mBlendTime = 0.0f;
-		mInvertBlend = !mInvertBlend;
-		mPose = mSkeleton.GetRestPose();
+		unsigned int clip = mCurrentClip;
+		while (clip == mCurrentClip) {
+			clip = rand() % mClips.size();
+		}
+		mCurrentClip = clip;
+
+		mFadeController.FadeTo(&mClips[clip], 0.5f);
 	}
+
+	mFadeController.GetCurrentPose().GetMatrixPalette(mPosePalette);
 }
 
 void Sample::Render(float aspect) {
 	mat4 model;
-	mat4 view = lookAt(vec3(0, 3, 5), vec3(0, 3, 0), vec3(0, 1, 0));
+	mat4 view = lookAt(vec3(0, 3, 7), vec3(0, 3, 0), vec3(0, 1, 0));
 	mat4 projection = perspective(60.0f, aspect, 0.01f, 1000.0f);
 
 	mShader->Bind();
@@ -73,7 +58,7 @@ void Sample::Render(float aspect) {
 	Uniform<mat4>::Set(mShader->GetUniform("view"), view);
 	Uniform<mat4>::Set(mShader->GetUniform("projection"), projection);
 	Uniform<mat4>::Set(mShader->GetUniform("pose"), mPosePalette);
-	Uniform<mat4>::Set(mShader->GetUniform("invBindPose"), mSkinPalette);
+	Uniform<mat4>::Set(mShader->GetUniform("invBindPose"), mSkeleton.GetInvBindPose());
 	Uniform<vec3>::Set(mShader->GetUniform("light"), vec3(1, 1, 1));
 	mTexture->Set(mShader->GetUniform("tex0"), 0);
 	for (unsigned int i = 0, size = (unsigned int)mMeshes.size(); i < size; ++i) {
