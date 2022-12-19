@@ -40,7 +40,6 @@ float TClip<TRACK>::AdjustTimeToFitRange(float inTime) {
 			inTime += mEndTime - mStartTime;
 		}
 		inTime = inTime + mStartTime;
-
 	}
 	else {
 		if (inTime < mStartTime) {

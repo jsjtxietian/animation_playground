@@ -10,7 +10,7 @@
 class Sample : public Application {
 protected:
 	Transform mTarget;
-	CCDSolver mSolver;
+	FABRIKSolver mSolver;
 	DebugDraw* mSolverLines;
 	DebugDraw* mSolverPoints;
 	DebugDraw* mTargetVisual[3];

@@ -5,12 +5,12 @@
 
 void Sample::Initialize() {
 	mSolver.Resize(6);
-	mSolver[0] = Transform(vec3(), angleAxis(90.0f * QUAT_DEG2RAD, vec3(1, 0, 0)), vec3(1, 1, 1));
-	mSolver[1] = Transform(vec3(0, 0, 1.0f), quat(), vec3(1, 1, 1));
-	mSolver[2] = Transform(vec3(0, 0, 1.5f), quat(), vec3(1, 1, 1));
-	mSolver[3] = Transform(vec3(0, 0, 0.5f), angleAxis(90.0f * QUAT_DEG2RAD, vec3(0, 1, 0)), vec3(1, 1, 1));
-	mSolver[4] = Transform(vec3(0, 0, 0.5f), quat(), vec3(1, 1, 1));
-	mSolver[5] = Transform(vec3(0, 0, 0.5f), quat(), vec3(1, 1, 1));
+	mSolver.SetLocalTransform(0, Transform(vec3(), angleAxis(90.0f * QUAT_DEG2RAD, vec3(1, 0, 0)), vec3(1, 1, 1)));
+	mSolver.SetLocalTransform(1, Transform(vec3(0, 0, 1.0f), quat(), vec3(1, 1, 1)));
+	mSolver.SetLocalTransform(2, Transform(vec3(0, 0, 1.5f), quat(), vec3(1, 1, 1)));
+	mSolver.SetLocalTransform(3, Transform(vec3(0, 0, 0.5f), angleAxis(90.0f * QUAT_DEG2RAD, vec3(0, 1, 0)), vec3(1, 1, 1)));
+	mSolver.SetLocalTransform(4, Transform(vec3(0, 0, 0.5f), quat(), vec3(1, 1, 1)));
+	mSolver.SetLocalTransform(5, Transform(vec3(0, 0, 0.5f), quat(), vec3(1, 1, 1)));
 
 	mTarget.position = vec3(1, -2, 0);
 
