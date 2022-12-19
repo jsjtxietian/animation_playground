@@ -55,6 +55,12 @@
     <Filter Include="Source Files\Animation\Blending">
       <UniqueIdentifier>{d5bc9e31-3018-4e6c-83cc-400b690e0d36}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\IK">
+      <UniqueIdentifier>{f73de771-4418-49f9-8528-8bfd91d5d994}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IK">
+      <UniqueIdentifier>{5f482222-cd5b-4ea6-9245-08ee6ec461f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\WinMain.cpp">
@@ -126,8 +132,11 @@
     <ClCompile Include="Code\CrossFadeController.cpp">
       <Filter>Source Files\Animation\Blending</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Sample.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Code\CCDSolver.cpp">
+      <Filter>Source Files\IK</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\FABRIKSolver.cpp">
+      <Filter>Source Files\IK</Filter>
     </ClCompile>
     <ClCompile Include="Code\RearrangeBones.cpp">
       <Filter>Source Files\Animation</Filter>
@@ -221,8 +230,11 @@
     <ClInclude Include="Code\CrossFadeController.h">
       <Filter>Header Files\Animation\Blending</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Sample.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Code\CCDSolver.h">
+      <Filter>Header Files\IK</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\FABRIKSolver.h">
+      <Filter>Header Files\IK</Filter>
     </ClInclude>
     <ClInclude Include="Code\RearrangeBones.h">
       <Filter>Header Files\Animation</Filter>
