@@ -137,6 +137,7 @@
     <ClCompile Include="Code\cgltf.c" />
     <ClCompile Include="Code\Clip.cpp" />
     <ClCompile Include="Code\CrossFadeController.cpp" />
+    <ClCompile Include="Code\DebugDraw.cpp" />
     <ClCompile Include="Code\Draw.cpp" />
     <ClCompile Include="Code\FABRIKSolver.cpp" />
     <ClCompile Include="Code\glad.c" />
@@ -147,6 +148,7 @@
     <ClCompile Include="Code\Pose.cpp" />
     <ClCompile Include="Code\quat.cpp" />
     <ClCompile Include="Code\RearrangeBones.cpp" />
+    <ClCompile Include="Code\Sample.cpp" />
     <ClCompile Include="Code\Shader.cpp" />
     <ClCompile Include="Code\Skeleton.cpp" />
     <ClCompile Include="Code\stb_image.cpp" />
@@ -167,6 +169,7 @@
     <ClInclude Include="Code\Clip.h" />
     <ClInclude Include="Code\CrossFadeController.h" />
     <ClInclude Include="Code\CrossFadeTarget.h" />
+    <ClInclude Include="Code\DebugDraw.h" />
     <ClInclude Include="Code\Draw.h" />
     <ClInclude Include="Code\FABRIKSolver.h" />
     <ClInclude Include="Code\Frame.h" />
@@ -180,6 +183,7 @@
     <ClInclude Include="Code\Pose.h" />
     <ClInclude Include="Code\quat.h" />
     <ClInclude Include="Code\RearrangeBones.h" />
+    <ClInclude Include="Code\Sample.h" />
     <ClInclude Include="Code\Shader.h" />
     <ClInclude Include="Code\Skeleton.h" />
     <ClInclude Include="Code\stb_image.h" />

@@ -138,6 +138,12 @@
     <ClCompile Include="Code\FABRIKSolver.cpp">
       <Filter>Source Files\IK</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Sample.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\DebugDraw.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
     <ClCompile Include="Code\RearrangeBones.cpp">
       <Filter>Source Files\Animation</Filter>
     </ClCompile>
@@ -235,6 +241,12 @@
     </ClInclude>
     <ClInclude Include="Code\FABRIKSolver.h">
       <Filter>Header Files\IK</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Sample.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\DebugDraw.h">
+      <Filter>Header Files\Rendering</Filter>
     </ClInclude>
     <ClInclude Include="Code\RearrangeBones.h">
       <Filter>Header Files\Animation</Filter>
