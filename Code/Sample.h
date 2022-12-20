@@ -4,23 +4,50 @@
 #include "Application.h"
 #include "DebugDraw.h"
 #include <vector>
+#include "Pose.h"
+#include "Clip.h"
+#include "Skeleton.h"
+#include "Mesh.h"
+#include "Texture.h"
 #include <vector>
-#include "TransformTrack.h"
+#include "Intersections.h"
+#include "IKLeg.h"
 
 class Sample : public Application {
 protected:
-	Transform mTarget;
-	FABRIKSolver mSolver;
-	DebugDraw* mSolverLines;
-	DebugDraw* mSolverPoints;
-	DebugDraw* mTargetVisual[3];
-	TransformTrack mTargetPath;
-	float mPlayTime;
-	float mCamPitch;
-	float mCamYaw;
-	float mCamDist;
-protected:
-	void SetFrame(VectorTrack& track, int index, float time, const vec3& value);
+	Texture* mCourseTexture;
+	std::vector<Mesh> mIKCourse;
+	std::vector<Triangle> mTriangles;
+
+	VectorTrack mMotionTrack;
+	float mWalkingTime;
+
+	Transform mModel;
+	std::vector<Mesh> mMeshes;
+	Pose mCurrentPose;
+	std::vector<mat4> mPosePalette;
+	float mSinkIntoGround;
+
+	IKLeg* mLeftLeg;
+	IKLeg* mRightLeg;
+	float mToeLength;
+	float mLastModelY;
+
+	Texture* mDiffuseTexture;
+	Shader* mStaticShader;
+	Shader* mSkinnedShader;
+	Skeleton mSkeleton;
+	std::vector<Clip> mClips;
+	unsigned int mCurrentClip;
+	float mPlaybackTime;
+	DebugDraw* mCurrentPoseVisual;
+
+	bool mShowIKPose;
+	bool mShowCurrentPose;
+	float mTimeMod;
+	bool mDepthTest;
+	bool mShowMesh;
+	bool mShowEnvironment;
 public:
 	void Initialize();
 	void Update(float deltaTime);

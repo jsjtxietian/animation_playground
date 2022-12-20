@@ -142,7 +142,9 @@
     <ClCompile Include="Code\FABRIKSolver.cpp" />
     <ClCompile Include="Code\glad.c" />
     <ClCompile Include="Code\GLTFLoader.cpp" />
+    <ClCompile Include="Code\IKLeg.cpp" />
     <ClCompile Include="Code\IndexBuffer.cpp" />
+    <ClCompile Include="Code\Intersections.cpp" />
     <ClCompile Include="Code\mat4.cpp" />
     <ClCompile Include="Code\Mesh.cpp" />
     <ClCompile Include="Code\Pose.cpp" />
@@ -175,8 +177,10 @@
     <ClInclude Include="Code\Frame.h" />
     <ClInclude Include="Code\glad.h" />
     <ClInclude Include="Code\GLTFLoader.h" />
+    <ClInclude Include="Code\IKLeg.h" />
     <ClInclude Include="Code\IndexBuffer.h" />
     <ClInclude Include="Code\Interpolation.h" />
+    <ClInclude Include="Code\Intersections.h" />
     <ClInclude Include="Code\khrplatform.h" />
     <ClInclude Include="Code\mat4.h" />
     <ClInclude Include="Code\Mesh.h" />
