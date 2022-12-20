@@ -104,7 +104,7 @@ void FABRIKSolver::IterateForward(const vec3& base) {
 		mWorldChain[0] = base;
 	}
 
-	for (int i = 1; i < size; ++i) {
+	for (unsigned int i = 1; i < size; ++i) {
 		vec3 direction = normalized(mWorldChain[i] - mWorldChain[i - 1]);
 		vec3 offset = direction * mLengths[i];
 		mWorldChain[i] = mWorldChain[i - 1] + offset;

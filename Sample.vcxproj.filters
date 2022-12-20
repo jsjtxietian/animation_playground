@@ -141,6 +141,9 @@
     <ClCompile Include="Code\DualQuaternion.cpp">
       <Filter>Source Files\Math</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Sample.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Code\RearrangeBones.cpp">
       <Filter>Source Files\Animation</Filter>
     </ClCompile>
@@ -241,6 +244,9 @@
     </ClInclude>
     <ClInclude Include="Code\DualQuaternion.h">
       <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Sample.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Code\RearrangeBones.h">
       <Filter>Header Files\Animation</Filter>
