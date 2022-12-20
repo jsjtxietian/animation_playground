@@ -5,6 +5,7 @@
 #include "vec4.h"
 #include "quat.h"
 #include "mat4.h"
+#include "DualQuaternion.h"
 
 template Uniform<int>;
 template Uniform<ivec4>;
@@ -15,6 +16,7 @@ template Uniform<vec3>;
 template Uniform<vec4>;
 template Uniform<quat>;
 template Uniform<mat4>;
+template Uniform<DualQuaternion>;
 
 #define UNIFORM_IMPL(gl_func, tType, dType) \
 template<> \
@@ -34,6 +36,11 @@ UNIFORM_IMPL(glUniform4fv, quat, float)
 template<>
 void Uniform<mat4>::Set(unsigned int slot, mat4* inputArray, unsigned int arrayLength) {
 	glUniformMatrix4fv(slot, (GLsizei)arrayLength, false, (float*)&inputArray[0]);
+}
+
+template<>
+void Uniform<DualQuaternion>::Set(unsigned int slot, DualQuaternion* inputArray, unsigned int arrayLength) {
+	glUniformMatrix2x4fv(slot, arrayLength, false, inputArray[0].v);
 }
 
 template <typename T>

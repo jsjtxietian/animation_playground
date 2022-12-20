@@ -2,6 +2,7 @@
 #define _H_SKELETON_
 
 #include "Pose.h"
+#include "DualQuaternion.h"
 #include "mat4.h"
 #include <vector>
 #include <string>
@@ -25,6 +26,8 @@ public:
 	std::vector<mat4>& GetInvBindPose();
 	std::vector<std::string>& GetJointNames();
 	std::string& GetJointName(unsigned int index);
+
+	void GetInvBindPose(std::vector<DualQuaternion>& outInvBndPose);
 };
 
 #endif 
