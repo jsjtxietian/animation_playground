@@ -131,12 +131,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Code\AnimBaker.cpp" />
+    <ClCompile Include="Code\AnimTexture.cpp" />
     <ClCompile Include="Code\Attribute.cpp" />
     <ClCompile Include="Code\Blending.cpp" />
     <ClCompile Include="Code\CCDSolver.cpp" />
     <ClCompile Include="Code\cgltf.c" />
     <ClCompile Include="Code\Clip.cpp" />
     <ClCompile Include="Code\CrossFadeController.cpp" />
+    <ClCompile Include="Code\Crowd.cpp" />
     <ClCompile Include="Code\Draw.cpp" />
     <ClCompile Include="Code\DualQuaternion.cpp" />
     <ClCompile Include="Code\FABRIKSolver.cpp" />
@@ -148,7 +151,6 @@
     <ClCompile Include="Code\Pose.cpp" />
     <ClCompile Include="Code\quat.cpp" />
     <ClCompile Include="Code\RearrangeBones.cpp" />
-    <ClCompile Include="Code\Sample.cpp" />
     <ClCompile Include="Code\Shader.cpp" />
     <ClCompile Include="Code\Skeleton.cpp" />
     <ClCompile Include="Code\stb_image.cpp" />
@@ -161,6 +163,8 @@
     <ClCompile Include="Code\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Code\AnimBaker.h" />
+    <ClInclude Include="Code\AnimTexture.h" />
     <ClInclude Include="Code\Application.h" />
     <ClInclude Include="Code\Attribute.h" />
     <ClInclude Include="Code\Blending.h" />
@@ -169,6 +173,7 @@
     <ClInclude Include="Code\Clip.h" />
     <ClInclude Include="Code\CrossFadeController.h" />
     <ClInclude Include="Code\CrossFadeTarget.h" />
+    <ClInclude Include="Code\Crowd.h" />
     <ClInclude Include="Code\Draw.h" />
     <ClInclude Include="Code\DualQuaternion.h" />
     <ClInclude Include="Code\FABRIKSolver.h" />
@@ -183,7 +188,6 @@
     <ClInclude Include="Code\Pose.h" />
     <ClInclude Include="Code\quat.h" />
     <ClInclude Include="Code\RearrangeBones.h" />
-    <ClInclude Include="Code\Sample.h" />
     <ClInclude Include="Code\Shader.h" />
     <ClInclude Include="Code\Skeleton.h" />
     <ClInclude Include="Code\stb_image.h" />
@@ -197,6 +201,7 @@
     <ClInclude Include="Code\vec4.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Shaders\crowd.vert" />
     <None Include="Shaders\dualquaternion.vert" />
     <None Include="Shaders\lit.frag" />
     <None Include="Shaders\preskinned.vert" />

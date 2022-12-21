@@ -141,8 +141,14 @@
     <ClCompile Include="Code\DualQuaternion.cpp">
       <Filter>Source Files\Math</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Sample.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Code\AnimTexture.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\AnimBaker.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Crowd.cpp">
+      <Filter>Source Files\Rendering</Filter>
     </ClCompile>
     <ClCompile Include="Code\RearrangeBones.cpp">
       <Filter>Source Files\Animation</Filter>
@@ -245,8 +251,14 @@
     <ClInclude Include="Code\DualQuaternion.h">
       <Filter>Header Files\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Sample.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Code\AnimTexture.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\AnimBaker.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Crowd.h">
+      <Filter>Header Files\Rendering</Filter>
     </ClInclude>
     <ClInclude Include="Code\RearrangeBones.h">
       <Filter>Header Files\Animation</Filter>
@@ -266,6 +278,9 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="Shaders\dualquaternion.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\crowd.vert">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
