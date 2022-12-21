@@ -151,6 +151,7 @@
     <ClCompile Include="Code\Pose.cpp" />
     <ClCompile Include="Code\quat.cpp" />
     <ClCompile Include="Code\RearrangeBones.cpp" />
+    <ClCompile Include="Code\Sample.cpp" />
     <ClCompile Include="Code\Shader.cpp" />
     <ClCompile Include="Code\Skeleton.cpp" />
     <ClCompile Include="Code\stb_image.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="Code\Pose.h" />
     <ClInclude Include="Code\quat.h" />
     <ClInclude Include="Code\RearrangeBones.h" />
+    <ClInclude Include="Code\Sample.h" />
     <ClInclude Include="Code\Shader.h" />
     <ClInclude Include="Code\Skeleton.h" />
     <ClInclude Include="Code\stb_image.h" />

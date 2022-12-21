@@ -35,6 +35,9 @@ public:
 
 	void Update(float deltaTime, Clip& mClip, unsigned int texWidth);
 	void SetUniforms(Shader* shader);
+
+	void RandomizeTimes(Clip& clip);
+	void RandomizePositions(std::vector<vec3>& existing, const vec3& min, const vec3& max, float radius);
 };
 
 

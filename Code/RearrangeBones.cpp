@@ -88,3 +88,5 @@ void RearrangeMesh(Mesh& mesh, BoneMap& boneMap) {
 
 	mesh.UpdateOpenGLBuffers();
 }
+
+

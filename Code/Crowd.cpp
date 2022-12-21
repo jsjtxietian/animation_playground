@@ -113,3 +113,52 @@ void Crowd::SetUniforms(Shader* shader) {
 	Uniform<ivec2>::Set(shader->GetUniform("frames"), mFrames);
 	Uniform<float>::Set(shader->GetUniform("time"), mTimes);
 }
+
+void Crowd::RandomizeTimes(Clip& clip) {
+	float start = clip.GetStartTime();
+	float duration = clip.GetDuration();
+
+	unsigned int size = (unsigned int)mCurrentPlayTimes.size();
+	for (unsigned int i = 0; i < size; ++i) {
+		float random = (float)rand() / (float)RAND_MAX;
+		mCurrentPlayTimes[i] = random * duration + start;
+	}
+}
+
+void Crowd::RandomizePositions(std::vector<vec3>& existing, const vec3& min, const vec3& max, float radius) {
+	std::vector<vec3> positions;
+	unsigned int size = (unsigned int)mCurrentPlayTimes.size();
+	positions.reserve(size);
+	vec3 delta = max - min;
+
+	unsigned int breakLoop = 0;
+
+	while (positions.size() < size) {
+		if (breakLoop >= 2000) {
+			break;
+		}
+		vec3 random((float)rand() / (float)RAND_MAX, (float)rand() / (float)RAND_MAX, (float)rand() / (float)RAND_MAX);
+		vec3 point = min + delta * random;
+
+		bool valid = true;
+		for (unsigned int i = 0, iSize = (unsigned int)existing.size(); i < iSize; ++i) {
+			if (lenSq(existing[i] - point) < radius * radius) {
+				valid = false;
+				breakLoop += 1;
+				break;
+			}
+		}
+
+		if (valid) {
+			breakLoop = 0;
+			positions.push_back(point);
+			existing.push_back(point);
+		}
+	}
+
+	if (positions.size() != size) {
+		Resize((unsigned int)positions.size());
+	}
+
+	memcpy(mPositions[0].v, positions[0].v, sizeof(float) * positions.size() * 3);
+}
